@@ -2,9 +2,10 @@
   "name": "sass-linear-expression",
   "version": "0.0.0",
   "description": "Create linear expression for CSS calc function.",
-  "main": "sass-linear-expression.sass",
+  "main": "sass-linear-expression.scss",
   "scripts": {
-    "test": "test/test.js"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/sigmundftw/sass-linear-expression/issues"
   },
-  "homepage": "https://github.com/sigmundftw/sass-linear-expression#readme"
+  "homepage": "https://github.com/sigmundftw/sass-linear-expression#readme",
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "node-sass": "^4.12.0",
+    "sass-true": "^5.0.0"
+  }
 }

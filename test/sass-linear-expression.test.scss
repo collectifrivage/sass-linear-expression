@@ -1,0 +1,12 @@
+// (SASS) True for unit test
+$true-terminal-output: false;
+@import '../node_modules/sass-true/sass/true';
+
+// Import "SASS Linear Expression" function
+@import '../sass-linear-expression';
+
+@include describe('AB') {
+  @include it('Test A') {
+    @include assert-equal(sass-linear-expression("a"), "a");
+  }
+}
