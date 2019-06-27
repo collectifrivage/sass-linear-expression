@@ -1,0 +1,64 @@
+/**
+ * Create an expression from points (and CSS unit)
+ * to use with a CSS calc() function.
+ */
+@function linear-expression( $p1, $p2/*, $unit*/ ) {
+
+  $p1x: nth($p1, 1);
+  $p1y: nth($p1, 2);
+
+  $p2x: nth($p2, 1);
+  $p2y: nth($p2, 2);
+
+  @if (not comparable($p2y, $p1y)) {
+    @error "SASS Linear Expression has mixed CSS unit for 'rise' calculation.";
+  }
+
+  $rise: $p2y - $p1y;
+
+  @if (not comparable($p2x, $p1x)) {
+    @error "SASS Linear Expression has mixed CSS unit for 'run' calculation.";
+  }
+
+  $run: $p2x - $p1x;
+
+  @if (not comparable($rise, $run)) {
+    @error "SASS Linear Expression has mixed CSS unit for 'slope' calculation.";
+  }
+  
+  $slope: $rise / $run;
+
+  @if (not unitless($slope)) {
+    @error "SASS Linear Expression 'slope' calculation result is not unitless.";
+  }
+
+  @if (not comparable($p1y, $p1x) or not comparable($slope, $p1x)) {
+    @error "SASS Linear Expression has mixed CSS unit for 'intercept' calculation.";
+  }
+
+  $intercept: $p1y - $slope * $p1x;
+  /*
+  $vw-per-unit:       0;
+  $unit-lower-case:   to-lower-case($unit);
+
+  @if ($unit-lower-case == 'cm') {
+    $vw-per-unit: 96 / 2.54;
+  } @else if ($unit-lower-case == 'mm') {
+    $vw-per-unit: 96 / 25.4;
+  } @else if ($unit-lower-case == 'in') {
+    $vw-per-unit: 96;
+  } @else if ($unit-lower-case == 'px') {
+    $vw-per-unit: 1;
+  } @else if ($unit-lower-case == 'pt') {
+    $vw-per-unit: 96 / 72;
+  } @else if ($unit-lower-case == 'pc') {
+    $vw-per-unit: 96 / 72 * 12;
+  }
+
+  @if $vw-per-unit == 0 {
+    @error "SASS Linear Expression has received an invalid CSS unit.";
+  }
+  */
+  @return "(#{$intercept} + #{$slope * 100}vw)";
+
+}

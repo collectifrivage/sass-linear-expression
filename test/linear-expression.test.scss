@@ -1,0 +1,71 @@
+/**
+ * Important
+ * Use a precision of 10 digits for float value.
+ */
+
+// (SASS) True for unit test
+$true-terminal-output: false;
+@import '../node_modules/sass-true/sass/true';
+
+// Import "Linear Expression" function
+@import '../linear-expression';
+
+// "SASS Linear Expression" tests for "px" unit
+@include describe('SASS Linear Expression (Pixel)') {
+
+  // (0px, 0px) to (100px, 100px)
+  @include it('Expression for (0px, 0px) to (100px, 100px)') {
+    $test: linear-expression(
+      $p1: (0px, 0px),
+      $p2: (100px, 100px)
+    );
+    $expect: "(0px + 100vw)";
+    @include assert-equal($test, $expect);
+  }
+
+  // (320px, 16px) to (1920px, 128px)
+  @include it('Expression for (320px, 16px) to (1920px, 128px)') {
+    $test: linear-expression(
+      $p1: (320px, 16px),
+      $p2: (1920px, 128px)
+    );
+    $expect: "(-6.4px + 7vw)";
+    @include assert-equal($test, $expect);
+  }
+
+  // (314px, 15px) to (1913px, 87px)
+  @include it('Expression for (314px, 15px) to (1913px, 87px)') {
+    $test: linear-expression(
+      $p1: (314px, 15px),
+      $p2: (1913px, 87px)
+    );
+    $expect: "(0.861163227px + 4.5028142589vw)";
+    @include assert-equal($test, $expect);
+  }
+
+  // (314px, 87px) to (1913px, 15px)
+  @include it('Expression for (314px, 87px) to (1913px, 15px)') {
+    $test: linear-expression(
+      $p1: (314px, 87px),
+      $p2: (1913px, 15px)
+    );
+    $expect: "(101.138836773px + -4.5028142589vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}
+
+// "SASS Linear Expression" tests for "in" unit
+@include describe('SASS Linear Expression (Inches)') {
+
+  // (0px, 0px) to (100px, 100px)
+  @include it('Expression for (0, 0) to (100, 100)') {
+    $test: linear-expression(
+      $p1: (0in, 0in),
+      $p2: (10in, 10in)
+    );
+    $expect: "(0in + 960vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}

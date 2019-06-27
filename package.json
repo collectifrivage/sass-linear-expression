@@ -2,7 +2,7 @@
   "name": "sass-linear-expression",
   "version": "0.0.0",
   "description": "Create linear expression for CSS calc function.",
-  "main": "sass-linear-expression.scss",
+  "main": "linear-expression.scss",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch"
