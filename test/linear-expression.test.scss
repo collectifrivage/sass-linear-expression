@@ -33,6 +33,16 @@ $true-terminal-output: false;
     @include assert-equal($test, $expect);
   }
 
+  // (1920px, 128px) to (320px, 16px) 
+  @include it('Expression for(1920px, 128px) to (320px, 16px)') {
+    $test: linear-expression(
+      $p1: (1920px, 128px),
+      $p2: (320px, 16px)
+    );
+    $expect: "(-6.4px + 7vw)";
+    @include assert-equal($test, $expect);
+  }
+
   // (314px, 15px) to (1913px, 87px)
   @include it('Expression for (314px, 15px) to (1913px, 87px)') {
     $test: linear-expression(
@@ -120,6 +130,20 @@ $true-terminal-output: false;
       $p2: (25pc, 25pc)
     );
     $expect: "(100px + 75vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}
+
+// Mixed units 
+@include describe('Mixed units') {
+
+  @include it('Expression for (5cm, 1in) to (25pc, 250mm)') {
+    $test: linear-expression(
+      $p1: (5cm, 1in),
+      $p2: (25pc, 250mm)
+    );
+    $expect: "(-664.192737102px + 402.268656716vw)";
     @include assert-equal($test, $expect);
   }
   

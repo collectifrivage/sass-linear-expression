@@ -12,7 +12,11 @@
 
   $p2x:         0px + nth($p2, 1);
   $p2y:         0px + nth($p2, 2);
-  
+
+  @if ($p1x == $p2x or $p1y == $p2y) {
+    @error "SASS Linear Expression doesn't accept identical X or Y values.";
+  }
+
   $rise:        $p2y - $p1y;
   $run:         $p2x - $p1x;
   $slope:       $rise / $run;
