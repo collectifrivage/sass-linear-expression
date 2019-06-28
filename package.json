@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/sigmundftw/sass-linear-expression#readme",
   "devDependencies": {
-    "jest": "^24.8.0",
-    "node-sass": "^4.12.0",
+    "jest": ">=18.0.0",
+    "node-sass": ">=4.9.0",
     "sass-true": "^5.0.0"
   }
 }
