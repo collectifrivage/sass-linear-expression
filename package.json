@@ -1,7 +1,7 @@
 {
   "name": "sass-linear-expression",
   "version": "0.0.0",
-  "description": "Create linear expression for CSS calc function.",
+  "description": "Responsive dimension without use of media queries.",
   "main": "linear-expression.scss",
   "scripts": {
     "test": "jest",
@@ -17,7 +17,11 @@
     "scss",
     "linear",
     "expression",
-    "calc"
+    "calc",
+    "responsive",
+    "mobile",
+    "amp",
+    "fluid"
   ],
   "author": "Sigmund Inc.",
   "license": "MIT",
