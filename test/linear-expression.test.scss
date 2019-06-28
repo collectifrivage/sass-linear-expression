@@ -10,8 +10,8 @@ $true-terminal-output: false;
 // Import "Linear Expression" function
 @import '../linear-expression';
 
-// "SASS Linear Expression" tests for "px" unit
-@include describe('SASS Linear Expression (Pixel)') {
+// Pixels
+@include describe('Pixels') {
 
   // (0px, 0px) to (100px, 100px)
   @include it('Expression for (0px, 0px) to (100px, 100px)') {
@@ -55,17 +55,106 @@ $true-terminal-output: false;
   
 }
 
-// "SASS Linear Expression" tests for "in" unit
-@include describe('SASS Linear Expression (Inches)') {
+// Centimeters
+@include describe('Centimeters') {
 
-  // (0px, 0px) to (100px, 100px)
-  @include it('Expression for (0, 0) to (100, 100)') {
+  @include it('Expression for (5cm, 10cm) to (25cm, 25cm)') {
     $test: linear-expression(
-      $p1: (0in, 0in),
-      $p2: (10in, 10in)
+      $p1: (5cm, 10cm),
+      $p2: (25cm, 25cm)
     );
-    $expect: "(0in + 960vw)";
+    $expect: "(236.220472441px + 75vw)";
+    @include assert-equal($test, $expect);
+  }
+
+}
+
+// Millimeters
+@include describe('Millimeters') {
+
+  @include it('Expression for (50mm, 100mm) to (250mm, 250mm)') {
+    $test: linear-expression(
+      $p1: (50mm, 100mm),
+      $p2: (250mm, 250mm)
+    );
+    $expect: "(236.220472441px + 75vw)";
     @include assert-equal($test, $expect);
   }
   
+}
+
+// Inches
+@include describe('Inches') {
+
+  @include it('Expression for (5in, 10in) to (25in, 25in)') {
+    $test: linear-expression(
+      $p1: (5in, 10in),
+      $p2: (25in, 25in)
+    );
+    $expect: "(600px + 75vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}
+
+// Points 
+@include describe('Points') {
+
+  @include it('Expression for (5pt, 10pt) to (25pt, 25pt)') {
+    $test: linear-expression(
+      $p1: (5pt, 10pt),
+      $p2: (25pt, 25pt)
+    );
+    $expect: "(8.3333333333px + 75vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}
+
+// Picas 
+@include describe('Picas') {
+
+  @include it('Expression for (5pc, 10pc) to (25pc, 25pc)') {
+    $test: linear-expression(
+      $p1: (5pc, 10pc),
+      $p2: (25pc, 25pc)
+    );
+    $expect: "(100px + 75vw)";
+    @include assert-equal($test, $expect);
+  }
+  
+}
+
+// Parentheses
+@include describe('Parentheses') {
+
+  @include it('Undefined') {
+    $test: linear-expression(
+      $p1: (0px, 0px),
+      $p2: (100px, 100px)
+    );
+    $expect: "(0px + 100vw)";
+    @include assert-equal($test, $expect);
+  }
+
+  @include it('With') {
+    $test: linear-expression(
+      $p1: (0px, 0px),
+      $p2: (100px, 100px),
+      $parentheses: true
+    );
+    $expect: "(0px + 100vw)";
+    @include assert-equal($test, $expect);
+  }
+
+  @include it('Without') {
+    $test: linear-expression(
+      $p1: (0px, 0px),
+      $p2: (100px, 100px),
+      $parentheses: false
+    );
+    $expect: "0px + 100vw";
+    @include assert-equal($test, $expect);
+  }
+
 }
