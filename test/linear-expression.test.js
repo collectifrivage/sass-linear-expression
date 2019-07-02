@@ -1,11 +1,10 @@
-var path = require('path');
-var sassTrue = require('sass-true');
+const path = require('path');
+const sassTrue = require('sass-true');
+const precision = 10; // MUST be 10 to match equality
 
-sassTrue.runSass({
-  precision: 10, // MUST be 10 to match equality
-  file: path.join(__dirname, 'linear-expression.test.scss')
-}, 
-{
-  describe, 
-  it
-});
+function test(file) {
+  sassTrue.runSass({precision, file}, {describe, it});
+}
+
+test(path.join(__dirname, 'linear-expression.test.scss'));
+test(path.join(__dirname, 'linear-expression.test.sass'));

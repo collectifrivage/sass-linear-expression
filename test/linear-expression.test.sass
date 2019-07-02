@@ -1,0 +1,13 @@
+// (SASS) True for unit test
+$true-terminal-output: false
+@import ../node_modules/sass-true/sass/true
+
+// Import "Linear Expression" function
+@import ../linear-expression
+
+// Syntax
+@include describe('Syntax')
+  @include it('Sass')
+    $test: linear-expression($p1: (314px, 15px), $p2: (1913px, 87px))
+    $expect: "(0.861163227px + 4.5028142589vw)"
+    @include assert-equal($test, $expect)

@@ -1,8 +1,3 @@
-/**
- * Important
- * Use a precision of 10 digits for float value.
- */
-
 // (SASS) True for unit test
 $true-terminal-output: false;
 @import '../node_modules/sass-true/sass/true';
@@ -178,6 +173,20 @@ $true-terminal-output: false;
       $parentheses: false
     );
     $expect: "0px + 100vw";
+    @include assert-equal($test, $expect);
+  }
+
+}
+
+// Syntax
+@include describe('Syntax') {
+
+  @include it('Scss') {
+    $test: linear-expression(
+      $p1: (314px, 15px),
+      $p2: (1913px, 87px)
+    );
+    $expect: "(0.861163227px + 4.5028142589vw)";
     @include assert-equal($test, $expect);
   }
 
