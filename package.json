@@ -1,6 +1,6 @@
 {
   "name": "sass-linear-expression",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Responsive dimension without use of media queries.",
   "main": "linear-expression.scss",
   "scripts": {
