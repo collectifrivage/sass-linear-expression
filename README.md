@@ -24,3 +24,5 @@ p {
   // viewport width of 2048px = 24.64px
 }
 ```
+
+__A complete documentation will be written in upcoming weeks.__
