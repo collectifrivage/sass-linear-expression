@@ -1,7 +1,7 @@
 {
   "name": "sass-linear-expression",
   "version": "1.0.0",
-  "description": "Responsive dimension without use of media queries.",
+  "description": "Responsive dimensions without the use of media queries.",
   "main": "linear-expression.scss",
   "scripts": {
     "test": "jest",
