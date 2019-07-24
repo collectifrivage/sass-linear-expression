@@ -111,7 +111,7 @@ $linear: linear-expression(
 ### Units
 
 `linear-expression()` accepts all absolute CSS units (cm, mm, in, px, pt, pc), 
-although the output will always by in pixels.
+although the output will always be in pixels.
 
 This is made possible by SASS's support of real-world unit calculations, as detailed in the
 [SASS documentation of numeric units](https://sass-lang.com/documentation/operators/numeric#units).
