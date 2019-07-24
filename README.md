@@ -1,6 +1,6 @@
 # SASS Linear Expression
 
-**Responsive dimension without use of media queries.**
+**Responsive dimensions without the use of media queries.**
 
 ```scss
 p {
@@ -34,7 +34,7 @@ import 'sass-linear-expression/linear-expression.scss'
 ## Browser support
 
 All browsers with support for CSS [calc()](https://caniuse.com/#search=calc) 
-and [vw](https://caniuse.com/#search=vw), which include :
+and [vw](https://caniuse.com/#search=vw) are supported, which includes:
 
 * Internet Explorer 11
 * Chrome
@@ -44,8 +44,8 @@ and [vw](https://caniuse.com/#search=vw), which include :
 
 ## Usage
 
-The `linear-expression()` SASS function return an expression to
-use with the CSS `calc()`. This enable more complexe expression.
+The `linear-expression()` SASS function returns an expression intended to
+use within the CSS `calc()` function. This enables more complex expressions:
 
 ```scss
 $linear: linear-expression(
@@ -59,12 +59,11 @@ font-size: calc(#{$linear} * 2);
 font-size: calc(#{$linear} / 2);
 // Addition
 font-size: calc(#{$linear} + 10%);
-// Substraction
+// Subtraction
 font-size: calc(#{$linear} - 10%);
 ```
 
-It is also possible to do addition or substraction of 
-multiple linear expressions.
+It is also possible to add or subtract multiple linear expressions:
 
 ```scss
 $linear1: linear-expression(
@@ -82,16 +81,16 @@ font-size: calc(#{$linear1} + #{$linear2});
 
 ### Precision
 
-Precision of float number will vary depending on your compiler configuration, 
-which affect the precision of the expression.
+The precision of float numbers will vary depending on your compiler configuration, 
+which affects the precision of the generated expressions.
 
 * [Node SASS precision option](https://github.com/sass/node-sass#precision)
 
 ### Order of operations
 
-CSS calc() function abide by order of operations, 
-for this reason the generated expression will be in parentheses,
-which can result like the following.
+The CSS `calc()` function follows the standard order of operations. 
+For this reason the generated expression will be surrounded by parentheses,
+which can result in the following:
 
 ```css
 p {
@@ -111,8 +110,8 @@ $linear: linear-expression(
 
 ### Units
 
-`linear-expression()` accept all absolute CSS units (cm, mm, in, px, pt, pc), 
-altough the output will always by in pixel.
+`linear-expression()` accepts all absolute CSS units (cm, mm, in, px, pt, pc), 
+although the output will always by in pixels.
 
-This is possible because of real-world unit calculations, has explain in the
+This is made possible by SASS's support of real-world unit calculations, as detailed in the
 [SASS documentation of numeric units](https://sass-lang.com/documentation/operators/numeric#units).
