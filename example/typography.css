@@ -1,0 +1,54 @@
+body {
+  color: #24292e;
+  font: 300 calc((12.8px + 0.375vw))/1.5 Roboto, sans-serif;
+  margin: 0;
+}
+
+.main {
+  margin: 0 calc((-70.4px + 27vw));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: calc((28.8px + 1vw));
+  margin-bottom: calc((12.8px + 1vw) / 2);
+  margin-top: calc((12.8px + 1vw) * 2);
+}
+
+h2 {
+  font-size: calc((24px + 0.625vw));
+  margin-bottom: calc((12.8px + 1vw) / 2);
+  margin-top: calc((12.8px + 1vw) * 2);
+}
+
+h3 {
+  font-size: calc((20.8px + 0.375vw));
+  margin-bottom: calc((12.8px + 1vw) / 2);
+  margin-top: calc((12.8px + 1vw) * 2);
+}
+
+h4 {
+  font-size: calc((18px + 0.3125vw));
+  margin-bottom: calc((12.8px + 1vw) / 2);
+  margin-top: calc((12.8px + 1vw) * 1.5);
+}
+
+h5 {
+  font-size: calc((16px + 0.3125vw));
+  margin-bottom: calc((12.8px + 1vw) / 2);
+  margin-top: calc((12.8px + 1vw) * 1.5);
+}
+
+h6 {
+  font-size: calc((12.8px + 0.375vw));
+  margin-bottom: calc((12.8px + 1vw) / 4);
+  margin-top: calc((12.8px + 1vw));
+}
+
+p {
+  margin-bottom: calc((12.8px + 1vw));
+  margin-top: 0;
+}

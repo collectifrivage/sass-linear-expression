@@ -1,0 +1,71 @@
+@import '../linear-expression';
+
+$lin-exp-main-margin-x:   linear-expression((320px, 16px), (1920px,448px));
+
+$lin-exp-font-size-base:  linear-expression((320px, 14px), (1920px, 20px));
+
+$lin-exp-font-size-h1:    linear-expression((320px, 32px), (1920px, 48px));
+$lin-exp-font-size-h2:    linear-expression((320px, 26px), (1920px, 36px));
+$lin-exp-font-size-h3:    linear-expression((320px, 22px), (1920px, 28px));
+$lin-exp-font-size-h4:    linear-expression((320px, 19px), (1920px, 24px));
+$lin-exp-font-size-h5:    linear-expression((320px, 17px), (1920px, 22px));
+$lin-exp-font-size-h6:    $lin-exp-font-size-base;
+
+$lin-exp-text-margin:     linear-expression((320px, 16px), (1920px, 32px));
+
+
+
+body {
+  color: #24292e;
+  font: 300 calc(#{$lin-exp-font-size-base})/1.5 Roboto, sans-serif;
+  margin: 0;
+}
+
+.main {
+  margin: 0 calc(#{$lin-exp-main-margin-x});
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size:      calc(#{$lin-exp-font-size-h1});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 2);
+  margin-top:     calc(#{$lin-exp-text-margin} * 2);
+}
+
+h2 {
+  font-size:      calc(#{$lin-exp-font-size-h2});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 2);
+  margin-top:     calc(#{$lin-exp-text-margin} * 2);
+}
+
+h3 {
+  font-size:      calc(#{$lin-exp-font-size-h3});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 2);
+  margin-top:     calc(#{$lin-exp-text-margin} * 2);
+}
+
+h4 {
+  font-size:      calc(#{$lin-exp-font-size-h4});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 2);
+  margin-top:     calc(#{$lin-exp-text-margin} * 1.5);
+}
+
+h5 {
+  font-size:      calc(#{$lin-exp-font-size-h5});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 2);
+  margin-top:     calc(#{$lin-exp-text-margin} * 1.5);
+}
+
+h6 {
+  font-size:      calc(#{$lin-exp-font-size-h6});
+  margin-bottom:  calc(#{$lin-exp-text-margin} / 4);
+  margin-top:     calc(#{$lin-exp-text-margin});
+}
+
+p {
+  margin-bottom:  calc(#{$lin-exp-text-margin});
+  margin-top:     0;
+}
