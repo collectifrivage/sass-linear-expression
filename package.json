@@ -7,8 +7,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "npm run build:example",
-    "build:example": "npm run build:example:typography",
-    "build:example:typography": "node-sass example/typography.scss example/typography.css --output-style expanded --precision 10"
+    "build:example": "npm run build:example:typography && npm run build:example:layout",
+    "build:example:typography": "node-sass example/typography.scss example/typography.css --output-style expanded --precision 10",
+    "build:example:layout": "node-sass example/layout.scss example/layout.css --output-style expanded --precision 10"
   },
   "repository": {
     "type": "git",

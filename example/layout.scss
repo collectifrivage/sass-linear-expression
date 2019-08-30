@@ -1,0 +1,44 @@
+@import '../linear-expression';
+
+$lin-exp-gutter:          linear-expression((320px, 8px), (1920px, 48px));
+$lin-exp-font-size-base:  linear-expression((320px, 14px), (1920px, 20px));
+$lin-exp-item-height:     linear-expression((320px, 72px), (1920px, 180px));
+$lin-exp-item-radius:     linear-expression((320px, 4px), (1920px, 16px));
+
+body {
+  color: #24292e;
+  font: 300 calc(#{$lin-exp-font-size-base})/1.5 Roboto, sans-serif;
+  margin: 0;
+}
+
+.container {
+  margin: calc(#{$lin-exp-gutter});
+}
+
+.row {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0 calc(#{$lin-exp-gutter} / -2);
+
+  + .row {
+    margin-top: calc(#{$lin-exp-gutter});
+  }
+}
+
+.col {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0 calc(#{$lin-exp-gutter} / 2);
+  width: 100%;
+}
+
+.item {
+  background: #209cee;
+  color: white;
+  border-radius: calc(#{$lin-exp-item-radius});
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  height: calc(#{$lin-exp-item-height});
+  justify-content: center;
+}
