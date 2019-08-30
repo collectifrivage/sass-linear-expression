@@ -1,7 +1,5 @@
-/**
- * Create an expression from points (and CSS unit)
- * to use with a CSS calc() function.
- */
+// Create an expression from points (and CSS unit)
+// to use with a CSS calc() function.
 @function linear-expression( $p1, $p2, $parentheses: true ) {
 
   // Convert absolute units to pixel
